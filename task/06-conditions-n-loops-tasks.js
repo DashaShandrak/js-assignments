@@ -30,7 +30,17 @@
  *
  */
 function getFizzBuzz(num) {
-    throw new Error('Not implemented');
+    let res;
+    if (num % 3 === 0 && num % 5 === 0) {
+        res = 'FizzBuzz';
+    } else if (num % 3 === 0) {
+        res = 'Fizz';
+    } else if (num % 5 === 0) {
+        res = 'Buzz';
+    } else {
+        res = num;
+    }
+    return res;
 }
 
 
@@ -46,7 +56,11 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
-    throw new Error('Not implemented');
+    let res = 1;
+    for (let i = 1; i <= n; i++) {
+        res = res * i;
+    }
+    return res;
 }
 
 
@@ -63,7 +77,11 @@ function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-    throw new Error('Not implemented');
+    let res = 0;
+    for (let i = n1; i <= n2; i++) {
+        res = res + i;
+    }
+    return res;
 }
 
 
@@ -82,7 +100,13 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,10,10 =>  true
  */
 function isTriangle(a,b,c) {
-    throw new Error('Not implemented');
+    let res;
+    if (a + b > c && a + c > b && b + c > a && a > 0 && b > 0 && c > 0) {
+        res = true;
+    } else {
+        res = false;
+    }
+    return res;
 }
 
 
@@ -226,7 +250,14 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+    let res;
+    let temp = new String(num);
+    let temp2 = temp.split("");
+    let temp3 = temp2.reverse();
+    let temp4 = temp3.join("");
+    res = +temp4;
+
+    return res;
 }
 
 
@@ -270,7 +301,28 @@ function isCreditCardNumber(ccn) {
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
 function getDigitalRoot(num) {
-    throw new Error('Not implemented');
+    let res;
+    let str = new String(num);
+    let arr = str.split("");
+    let temp = 0;
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = +arr[i];
+        temp = temp + arr[i];
+    } 
+    let str1 = new String(temp);
+    let arr1 = str1.split("");
+    if (arr1.length > 1) {
+        let temp1 = 0;
+        for (let a = 0; a < arr1.length; a++) {
+            arr1[a] = +arr1[a];
+            temp1 = temp1 + arr1[a];
+        }
+        res = temp1;
+    } else {
+        res = temp;
+    }
+    return res;
+
 }
 
 
